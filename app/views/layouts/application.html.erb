@@ -48,9 +48,13 @@
         <a class="navbar-brand" href="#">SaasProject</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+          <% if current_user %>
+            <li>
+              <%= link_to "<i class='fa fa-users'></i> Add Members".html_safe,
+              new_member_path,
+              class: 'navbar-link btn btn-primary' %>
+            </li>
+          <% end %>
           </ul>
           <ul class="nav navbar-right col-md-4">
             <% if current_user %>
