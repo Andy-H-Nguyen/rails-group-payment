@@ -24,8 +24,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # use milia for multiteneting
 gem 'milia'
-# use
+# use bootstrap
 gem 'twitter-bootstrap-rails'
+# use devise
 gem 'devise-bootstrap-views'
 
 # Use ActiveModel has_secure_password

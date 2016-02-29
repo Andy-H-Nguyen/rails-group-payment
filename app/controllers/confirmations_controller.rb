@@ -1,8 +1,6 @@
 # **************************************************************************
 # **************************************************************************
 
-module Milia
-
   class ConfirmationsController < Devise::ConfirmationsController
 
     skip_before_action :authenticate_tenant! 
@@ -26,14 +24,14 @@ module Milia
       end
         # else fall thru to show template which is form to set a password
         # upon SUBMIT, processing will continue from update
-      end
-        Then add another method underneath it:
-      def after_confirmation_path_for(resource_name, resource)
-        if user_signed_in?
-        root_path
-      else
-        new_user_session_path
-      end
+  end
+
+  def after_confirmation_path_for(resource_name, resource)
+    if user_signed_in?
+      root_path
+    else
+      new_user_session_path
+    end
   end
 
 
@@ -129,4 +127,3 @@ module Milia
   end
   
   end  # class
-end # module
