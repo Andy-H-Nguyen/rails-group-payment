@@ -1,33 +1,55 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<%= form_for @project, :html => { :class => "form-horizontal project" } do |f| %>
 
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @project.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :title, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
   </div>
-  <div class="field">
-    <%= f.label :details %><br>
-    <%= f.text_field :details %>
+  <div class="form-group">
+    <%= f.label :details, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :details, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:details) %>
   </div>
-  <div class="field">
-    <%= f.label :expected_completion_date %><br>
-    <%= f.date_select :expected_completion_date %>
+  <div class="form-group">
+    <%= f.label :expected_completion_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :expected_completion_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:expected_completion_date) %>
   </div>
-  <div class="field">
-    <%= f.label :tenant_id %><br>
-    <%= f.text_field :tenant_id %>
+  <div class="form-group">
+    <%= f.label :tenant_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tenant_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tenant_id) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                projects_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>
