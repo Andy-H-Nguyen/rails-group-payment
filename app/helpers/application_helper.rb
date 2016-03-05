@@ -1,6 +1,10 @@
 module ApplicationHelper
   ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
-
+  
+  def tenant_name(tenant_id)
+    Tenant.find(tenant_id)
+  end
+  
   def bootstrap_flash(options = {})
     flash_messages = []
     flash.each do |type, message|
