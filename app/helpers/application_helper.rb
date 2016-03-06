@@ -1,10 +1,6 @@
 module ApplicationHelper
   ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
-  
-  def tenant_name(tenant_id)
-    Tenant.find(tenant_id)
-  end
-  
+
   def bootstrap_flash(options = {})
     flash_messages = []
     flash.each do |type, message|
@@ -22,7 +18,8 @@ module ApplicationHelper
         class: "alert fade in alert-#{type} #{tag_class}"
       }.merge(options)
 
-      close_button = content_tag(:button, raw("&times;"), type: "button", class: "close", "data-dismiss" => "alert")
+      close_button = content_tag(:button, raw("&times;"), type: "button", class: "close", 
+        "data-dismiss" => "alert")
 
       Array(message).each do |msg|
         text = content_tag(:div, close_button + msg, tag_options)
@@ -30,5 +27,9 @@ module ApplicationHelper
       end
     end
     flash_messages.join("\n").html_safe
+  end
+  
+  def tenant_name(tenant_id)
+    Tenant.find(tenant_id).name
   end
 end
