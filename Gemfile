@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # use milia for multiteneting
 gem 'milia'
+# use aws
+gem 'aws-sdk'
 # use bootstrap
 gem 'twitter-bootstrap-rails'
 # use devise
