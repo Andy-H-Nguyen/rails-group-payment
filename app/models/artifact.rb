@@ -6,9 +6,8 @@ class Artifact < ActiveRecord::Base
   MAX_FILESIZE = 10.megabytes
   validates_presence_of :name, :upload
   validates_uniqueness_of :name
-  
   validate :uploaded_file_size
-  
+
   private
   
   def upload_to_s3
