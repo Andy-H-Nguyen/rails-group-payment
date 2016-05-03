@@ -3,11 +3,11 @@
 one:
   title: MyString
   details: MyString
-  expected_completion_date: 2016-03-01
+  expected_completion_date: 2015-11-12
   tenant_id: 
 
 two:
   title: MyString
   details: MyString
-  expected_completion_date: 2016-03-01
+  expected_completion_date: 2015-11-12
   tenant_id: 
