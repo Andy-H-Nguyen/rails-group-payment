@@ -32,6 +32,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 # use datepicket
 gem 'bootstrap-datepicker-rails'
+# use stripe
+gem 'stripe'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
