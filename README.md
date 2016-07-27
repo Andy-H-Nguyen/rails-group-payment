@@ -6,10 +6,14 @@ The organization's owner then can invite additional members to the organization 
 
 # Getting Started
 
-On a machine with Ruby on Rails run in the terminal 
-``rails server``.
+On a machine with Ruby on Rails run in the terminal
 
-Then go to ``localhost:3000`` to see the applications
+``$ cd/my_app_location``
+
+``$ rails server`` 
+
+Then go to ``localhost:3000``.
+
 # Demo
 
 Head on over to the website link above.
